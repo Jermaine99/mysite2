@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="{% static "js/vue.js" %}"></script>
+</head>
+<body>
+
+    <div id="root">
+
+        {% verbatim myblock %}
+
+        <h1>hello {{ name }}</h1>
+        <h1>age is {{ age}}</h1>
+        {% endverbatim myblock %}
+    </div>
+    <div>{% for item in age %}
+            <span>{{ item }}</span>
+            {% endfor %}
+    </div>
+    {% if name == 'world' %}
+        <div>GOOD WORLD</div>
+    {% else %}
+        <div>BAD WORLD</div>
+    {% endif %}
+
+    <script type="text/javascript" >
+        // Vue.config.productionTip = false //阻止Vue在启动时生成产品提示
+        // 创建Vue实例
+        const x = new Vue({
+            el: "#root",
+            data:{
+                name: 'World',
+                age: '18'
+            }
+        })
+    </script>
+
+</body>
+</html>

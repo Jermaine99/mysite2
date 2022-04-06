@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>我的主页</h1>
+    <p id = "demo">我是一个demo</p>
+    <img src="{% static 'img/1.png' %}" alt="Big Boat" width="200" height="150">
+
+    <script>
+        function myFunction(){
+            x : document.getElementById('demo')
+            x.innerHTML= 'hello javascript!';
+        }
+    </script>
+    <button type="button" onclick="myFunction()">点我!</button>
+</body>
+</html>
